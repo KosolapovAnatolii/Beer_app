@@ -1,0 +1,24 @@
+.header {
+  display: flex;
+  justify-content: space-evenly;
+
+  width: 100%;
+  padding: 22px;
+
+    &__title {
+      text-align: center;
+    }
+
+    &__delete-button {
+      font-weight: bold;
+      padding: 0px, 5px;
+      background-color: #cdeaa8;
+      cursor: pointer;
+      border-radius: 4px;
+
+      &:hover {
+        background-color: #a3b190;
+      }
+    }
+
+}
