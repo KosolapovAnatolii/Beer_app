@@ -1,15 +1,23 @@
 .header {
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
+  height: 60px;
 
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  padding: 22px;
+
+  padding: 12px;
+  background-color: #dbecc3;
 
     &__title {
       text-align: center;
     }
 
     &__delete-button {
+      height: 60px;
       font-weight: bold;
       padding: 0px, 5px;
       background-color: #cdeaa8;

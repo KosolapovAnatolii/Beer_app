@@ -5,10 +5,11 @@ import { useBeerStore } from './store/zustand';
 import { BeerPage } from './Components/BeerPage';
 
 function App() {
-  const getBeers = useBeerStore((state) => state.getBeers);
+  const setBeers = useBeerStore((state) => state.setBeers);
+  const currentPage = useBeerStore((state) => state.currentPage);
   
   useEffect(() => {
-    getBeers();
+    setBeers(currentPage);
   });
   
   return (

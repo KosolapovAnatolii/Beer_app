@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 // import { Beer } from '../../Types/Beer';
 import {  Malt } from '../../Types/Malt';
 import { Hops } from '../../Types/Hops';
+import { getBeerById } from '../../utils/api';
 
 export const BeerPage: React.FC = () => {
   const [beerData, setBeerData] = useState<any>(null);
@@ -11,19 +12,21 @@ export const BeerPage: React.FC = () => {
 
   const { beerId } = useParams();
 
-  useEffect(() => {
-    const fetchBeerData = async () => {
+  const fetchBeerData = async () => {
+    if (beerId) {
+      const id = +beerId;
       try {
-        const response = await fetch(`https://api.punkapi.com/v2/beers/${beerId}`);
-        const data = await response.json();
+        const data = await getBeerById(id);
         setBeerData(data[0]);
         setLoading(false);
       } catch (error) {
         console.error('Error with download data from API:', error);
         setLoading(false);
       }
-    };
+    }
+  };
 
+  useEffect(() => {
     fetchBeerData();
   }, []);
 
