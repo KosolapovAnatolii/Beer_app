@@ -42,14 +42,14 @@ export const BeerPage: React.FC = () => {
 
   return (
     <section className='beer-page'>
-      <header className="beer-page__header header">
+      <header className="beer-page__header head">
         <Link 
           to="/"
-          className="header__link"
+          className="head__link"
         >
           ← Home
         </Link>
-        <h2 className="header__name">{beerData.name}</h2>
+        <h2 className="head__name">{beerData.name}</h2>
       </header>
 
       <div className="beer-page__body">
